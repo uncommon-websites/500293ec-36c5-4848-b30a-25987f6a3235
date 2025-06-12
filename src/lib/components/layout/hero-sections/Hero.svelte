@@ -72,7 +72,7 @@
 		data-enter-container
 	>
 		<div class="grid max-w-2xl gap-8 lg:max-w-3xl" class:max-w-prose={centered}>
-			<h1 class="text-display w-full font-[500] tracking-tight" data-enter>
+			<h1 class="text-display w-full font-[500] tracking-tight text-center" data-enter>
 				<span class="mb-4 block">{title}</span>
 				{#if !centered}
 					<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
