@@ -11,7 +11,7 @@
 </script>
 
 <Hero
-	title="Hello YYYOYOYUOIUAPOIPAIDS Baby"
+	title="Hello Good Morning My friend"
 	subtitle="Never gonna give you up"
 	centered={false}
 />
