@@ -28,7 +28,7 @@
 
 <Summary
 	title="What we do"
-	text="Last week, I shared the design thinking behind @diabrowser with our closest friends & family. In the spirit of building in public, sharing the 10 min recording here too. It's a deep cut on Dia's architecture.Dia may look basic, but it’s surprisingly powerful under the hood:"
+	text="The tragedy in Ahmedabad has stunned and saddened us. It is heartbreaking beyond words. In this sad hour, my thoughts are with everyone affected by it. Have been in touch with Ministers and authorities who are working to assist those affected."
 />
 
 <Testimonials
