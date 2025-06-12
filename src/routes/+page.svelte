@@ -11,12 +11,20 @@
 </script>
 
 <Hero
-	title="Elevate your business with thoughtful design"
-	subtitle="Solutions that enhance user experience, and improve visual communication."
-	imageSrc="/sample.png"
-	generating
+	title="Less typing. More treating."
+	subtitle="Spend more time with patients, not paperwork."
+	centered={false}
 />
-<LogoScroller label="" generating />
+
+<LogoScroller
+	label="Trusted by industry leaders"
+	logoUrls={[
+		'https://logo.clearbit.com/banfield.com',
+		'https://logo.clearbit.com/bluepearlvet.com',
+		'https://logo.clearbit.com/vetstrategy.com',
+		'https://logo.clearbit.com/nva.com'
+	]}
+/>
 
 <Summary
 	generating
