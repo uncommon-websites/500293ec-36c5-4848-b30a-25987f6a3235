@@ -12,7 +12,7 @@
 
 <Hero
 	title="Hello world"
-	subtitle="Spend more time with patients, not paperwork."
+	subtitle="Never gonna give you up"
 	centered={false}
 />
 
