@@ -11,7 +11,7 @@
 </script>
 
 <Hero
-	title="Good Morning My friend "
+	title="Good Afternoon My friend  "
 	subtitle="Never gonna give you up"
 	centered={false}
 />
