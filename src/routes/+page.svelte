@@ -11,7 +11,7 @@
 </script>
 
 <Hero
-	title="Less typing. More treating."
+	title="Hello world"
 	subtitle="Spend more time with patients, not paperwork."
 	centered={false}
 />
