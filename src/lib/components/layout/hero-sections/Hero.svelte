@@ -73,7 +73,7 @@
 	>
 		<div class="grid gap-8 max-w-2xl lg:max-w-3xl" class:max-w-prose={centered}>
 			<h1 class="text-display w-full font-[500] tracking-tight" data-enter>
-				<span class="block mb-4">We love fast text editing</span>
+				<span class="block mb-4">This is a super nice tech company</span>
 				{#if !centered}
 					<span class="text-emphasis-dim block text-title2 mt-2">This is super cool</span>
 				{/if}
