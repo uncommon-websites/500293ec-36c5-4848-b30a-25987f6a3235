@@ -73,9 +73,9 @@
 	>
 		<div class="grid max-w-2xl gap-8 lg:max-w-3xl" class:max-w-prose={centered}>
 			<h1 class="text-display w-full font-[500] tracking-tight" data-enter>
-				<span class="mb-4 block">What do you mean</span>
+				<span class="mb-4 block">{title}</span>
 				{#if !centered}
-					<span class="text-emphasis-dim text-title2 mt-2 block">This is super cool</span>
+					<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
 				{/if}
 			</h1>
 
