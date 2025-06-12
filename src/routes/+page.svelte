@@ -11,7 +11,7 @@
 </script>
 
 <Hero
-	title="You are my sunshine"
+	title="Goodmornign"
 	subtitle="Never gonna give you up"
 	centered={false}
 />
