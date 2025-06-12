@@ -28,7 +28,7 @@
 
 <Summary
 	title="What we do"
-	text="Our technology delivers measurable results through secure, adaptable solutions that directly increase productivity and drive growth."
+	text="Last week, I shared the design thinking behind @diabrowser with our closest friends & family. In the spirit of building in public, sharing the 10 min recording here too. It's a deep cut on Dia's architecture.Dia may look basic, but it’s surprisingly powerful under the hood:"
 />
 
 <Testimonials
