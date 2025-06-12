@@ -10,7 +10,7 @@
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 </script>
 
-<Hero title="Good Morning" subtitle="Never gonna give you up" centered={false} />
+<Hero title="Good Morning" subtitle="Never gonna give you up" centered={true} />
 
 <LogoScroller
 	label="Trusted by industry leaders"
