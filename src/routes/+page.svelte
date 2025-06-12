@@ -10,26 +10,19 @@
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 </script>
 
-<Hero
-	title="Goodmornign"
-	subtitle="Never gonna give you up"
-	centered={false}
-/>
+<Hero title="Goodmornign" subtitle="Never gonna give you up" centered={false} />
 
 <LogoScroller
 	label="Trusted by industry leaders"
 	logoUrls={[
-		'https://logo.clearbit.com/banfield.com',
-		'https://logo.clearbit.com/bluepearlvet.com',
-		'https://logo.clearbit.com/vetstrategy.com',
-		'https://logo.clearbit.com/nva.com'
+		"https://logo.clearbit.com/banfield.com",
+		"https://logo.clearbit.com/bluepearlvet.com",
+		"https://logo.clearbit.com/vetstrategy.com",
+		"https://logo.clearbit.com/nva.com"
 	]}
 />
 
-<Summary
-	title="What we do"
-	text="We do cool things"
-/>
+<Summary title="What we do" text="We do cool things" />
 
 <Testimonials
 	testimonials={[
