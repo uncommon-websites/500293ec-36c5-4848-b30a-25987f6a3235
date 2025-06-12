@@ -28,7 +28,7 @@
 
 <Summary
 	title="What we do"
-	text="The tragedy in Ahmedabad has stunned and saddened us. It is heartbreaking beyond words. In this sad hour, my thoughts are with everyone affected by it. Have been in touch with Ministers and authorities who are working to assist those affected."
+	text="We do cool things"
 />
 
 <Testimonials
