@@ -73,7 +73,7 @@
 	>
 		<div class="grid gap-8 max-w-2xl lg:max-w-3xl" class:max-w-prose={centered}>
 			<h1 class="text-display w-full font-[500] tracking-tight" data-enter>
-				<span class="block mb-4"><AnimateText text={title} /></span>
+				<span class="block mb-4">This is the best tech website ever</span>
 				{#if !centered}
 					<span class="text-emphasis-dim block text-title2 mt-2"><AnimateText text={subtitle} /></span>
 				{/if}
