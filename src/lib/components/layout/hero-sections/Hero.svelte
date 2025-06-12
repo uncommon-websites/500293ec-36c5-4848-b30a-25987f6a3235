@@ -66,12 +66,12 @@
 <div class="bg-background section-py" {...rest}>
 	<header
 		class={[
-			"section-px container mx-auto grid items-end gap-20 gap-y-12 text-balance xl:grid-cols-[1fr_auto]",
-			centered ? "place-items-center text-center" : ""
+			"section-px container mx-auto grid items-end gap-20 gap-y-12 text-balance",
+			centered ? "place-items-center text-center xl:grid-cols-1" : "xl:grid-cols-[1fr_auto]"
 		]}
 		data-enter-container
 	>
-		<div class="grid max-w-2xl gap-8 lg:max-w-3xl" class:max-w-prose={centered}>
+		<div class={["grid gap-8", centered ? "max-w-prose mx-auto" : "max-w-2xl lg:max-w-3xl"]}>
 			<h1 class="text-display w-full font-[500] tracking-tight text-center" data-enter>
 				<span class="mb-4 block">{title}</span>
 				{#if !centered}
@@ -92,7 +92,7 @@
 		</div>
 
 		{#if callsToAction.length > 0}
-			<div class="mt-8 flex flex-wrap gap-4" data-enter>
+			<div class={["mt-8 flex flex-wrap gap-4", centered ? "justify-center" : ""]} data-enter>
 				{#each callsToAction as cta, index}
 					<Button
 						href={cta.href}
