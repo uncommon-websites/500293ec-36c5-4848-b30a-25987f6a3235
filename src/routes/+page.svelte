@@ -11,7 +11,7 @@
 </script>
 
 <Hero
-	title="Hello universe world Baby"
+	title="Hello universe Baby"
 	subtitle="Never gonna give you up"
 	centered={false}
 />
