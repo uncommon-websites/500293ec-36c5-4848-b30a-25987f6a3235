@@ -75,7 +75,7 @@
 			<h1 class="text-display w-full font-[500] tracking-tight" data-enter>
 				<span class="block mb-4">We love fast text editing</span>
 				{#if !centered}
-					<span class="text-emphasis-dim block text-title2 mt-2"><AnimateText text={subtitle} /></span>
+					<span class="text-emphasis-dim block text-title2 mt-2">This is super cool</span>
 				{/if}
 			</h1>
 
