@@ -73,7 +73,7 @@
 	>
 		<div class={["grid gap-8", centered ? "max-w-prose mx-auto" : "max-w-2xl lg:max-w-3xl"]}>
 			<h1 class="text-display w-full font-[500] tracking-tight text-center" data-enter>
-				<span class="mb-4 block">We're gonna change the world</span>
+				<span class="mb-4 block">{title}</span>
 				{#if !centered}
 					<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
 				{/if}
