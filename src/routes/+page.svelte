@@ -10,7 +10,11 @@
 	import Hero from "$lib/components/layout/hero-sections/Hero.svelte";
 </script>
 
-<Hero title="You're the best thing thats happen to me" subtitle="Never gonna give you up" centered={true} />
+<Hero 
+	title="You're the best thing thats happen to me" 
+	subtitle="Never gonna give you up" 
+	imageSrc="/generated/image-a-veterinarian-gently-examining-a-joyful.webp"
+/>
 
 <LogoScroller
 	label="Trusted by industry leaders"

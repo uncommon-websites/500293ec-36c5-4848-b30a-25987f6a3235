@@ -64,66 +64,116 @@
 </script>
 
 <div class="bg-background section-py" {...rest}>
-	<header
-		class={[
-			"section-px container mx-auto grid items-end gap-20 gap-y-12 text-balance",
-			centered ? "place-items-center text-center xl:grid-cols-1" : "xl:grid-cols-[1fr_auto]"
-		]}
-		data-enter-container
-	>
-		<div class={["grid gap-8", centered ? "max-w-prose mx-auto" : "max-w-2xl lg:max-w-3xl"]}>
-			<h1 class="text-display w-full font-[500] tracking-tight text-center" data-enter>
-				<span class="mb-4 block">{title}</span>
-				{#if !centered}
-					<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
-				{/if}
-			</h1>
+	{#if imageSrc && !centered}
+		<!-- Split layout with image -->
+		<div class="section-px container mx-auto" data-enter-container>
+			<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+				<!-- Content -->
+				<div class="grid gap-8">
+					<h1 class="text-display font-[500] tracking-tight" data-enter>
+						<span class="mb-4 block">{title}</span>
+						<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
+					</h1>
 
-			{#if centered}
-				<p
+					{#if callsToAction.length > 0}
+						<div class="flex flex-wrap gap-4" data-enter>
+							{#each callsToAction as cta, index}
+								<Button
+									href={cta.href}
+									size="lg"
+									variant={index % 2 === 0 ? "primary" : "secondary"}
+									class="rounded-[var(--radius-md)] px-8 py-3 font-[450] shadow-md transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none max-lg:hidden"
+									>{cta.label}</Button
+								>
+								<Button
+									href={cta.href}
+									size="md"
+									variant={index % 2 === 0 ? "primary" : "secondary"}
+									class="rounded-[var(--radius-md)] px-6 py-2 font-[450] shadow transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none lg:hidden"
+									>{cta.label}</Button
+								>
+							{/each}
+						</div>
+					{/if}
+				</div>
+
+				<!-- Image -->
+				<div
+					class="aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-lg lg:order-last"
 					data-enter
-					class={[
-						"text-muted-foreground text-headline mx-auto mt-2 block max-w-[45ch] transition duration-500 ease-out"
-					]}
 				>
-					{subtitle}
-				</p>
-			{/if}
+					<img
+						src={imageSrc}
+						alt="Hero image"
+						class="size-full object-cover"
+						onerror={handleImageError}
+					/>
+				</div>
+			</div>
 		</div>
+	{:else}
+		<!-- Centered layout or no image -->
+		<header
+			class={[
+				"section-px container mx-auto grid items-end gap-20 gap-y-12 text-balance",
+				centered ? "place-items-center text-center xl:grid-cols-1" : "xl:grid-cols-[1fr_auto]"
+			]}
+			data-enter-container
+		>
+			<div class={["grid gap-8", centered ? "max-w-prose mx-auto" : "max-w-2xl lg:max-w-3xl"]}>
+				<h1 class="text-display w-full font-[500] tracking-tight text-center" data-enter>
+					<span class="mb-4 block">{title}</span>
+					{#if !centered}
+						<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
+					{/if}
+				</h1>
 
-		{#if callsToAction.length > 0}
-			<div class={["mt-8 flex flex-wrap gap-4", centered ? "justify-center" : ""]} data-enter>
-				{#each callsToAction as cta, index}
-					<Button
-						href={cta.href}
-						size="lg"
-						variant={index % 2 === 0 ? "primary" : "secondary"}
-						class="rounded-[var(--radius-md)] px-8 py-3 font-[450] shadow-md transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none max-lg:hidden"
-						>{cta.label}</Button
+				{#if centered}
+					<p
+						data-enter
+						class={[
+							"text-muted-foreground text-headline mx-auto mt-2 block max-w-[45ch] transition duration-500 ease-out"
+						]}
 					>
-					<Button
-						href={cta.href}
-						size="md"
-						variant={index % 2 === 0 ? "primary" : "secondary"}
-						class="rounded-[var(--radius-md)] px-6 py-2 font-[450] shadow transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none lg:hidden"
-						>{cta.label}</Button
-					>
-				{/each}
+						{subtitle}
+					</p>
+				{/if}
+			</div>
+
+			{#if callsToAction.length > 0}
+				<div class={["mt-8 flex flex-wrap gap-4", centered ? "justify-center" : ""]} data-enter>
+					{#each callsToAction as cta, index}
+						<Button
+							href={cta.href}
+							size="lg"
+							variant={index % 2 === 0 ? "primary" : "secondary"}
+							class="rounded-[var(--radius-md)] px-8 py-3 font-[450] shadow-md transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none max-lg:hidden"
+							>{cta.label}</Button
+						>
+						<Button
+							href={cta.href}
+							size="md"
+							variant={index % 2 === 0 ? "primary" : "secondary"}
+							class="rounded-[var(--radius-md)] px-6 py-2 font-[450] shadow transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none lg:hidden"
+							>{cta.label}</Button
+						>
+					{/each}
+				</div>
+			{/if}
+		</header>
+
+		{#if imageSrc && centered}
+			<div
+				class="section-px container mx-auto mt-12 aspect-video overflow-hidden rounded-[var(--radius-lg)] shadow-lg"
+				data-enter
+			>
+				<img
+					src={imageSrc}
+					alt="Hero image"
+					class="size-full object-cover"
+					onerror={handleImageError}
+				/>
 			</div>
 		{/if}
-	</header>
-
-	{#if imageSrc}
-		<div
-			class="col-span-full mt-12 aspect-video overflow-hidden rounded-[var(--radius-lg)] shadow-lg lg:mt-0"
-			data-enter
-		>
-			<img
-				src={imageSrc}
-				alt="Customer"
-				class="size-full object-cover"
-				onerror={handleImageError}
-			/>
-		</div>
 	{/if}
 </div>
