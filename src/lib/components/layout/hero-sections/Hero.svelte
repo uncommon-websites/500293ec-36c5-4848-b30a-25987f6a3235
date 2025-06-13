@@ -104,7 +104,7 @@
 
 		<!-- Full width image -->
 		{#if imageSrc}
-			<div class="w-full mt-12" data-enter>
+			<div class="w-full mt-12 px-4 sm:px-6 lg:px-8" data-enter>
 				<img
 					src={imageSrc}
 					alt="Hero image"
