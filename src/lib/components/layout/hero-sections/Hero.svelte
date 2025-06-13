@@ -8,6 +8,7 @@
       title="Bold Claim"
       subtitle="Quick Value"
       imageSrc="/hero.jpg"
+      fullWidthImageBelow={true}
       callsToAction={[
         {
           href: "/start",
@@ -25,6 +26,8 @@
     - `title`: Main headline (string)
     - `subtitle`: Supporting text (string)
     - `imageSrc`: Hero image URL (string)
+    - `centered`: Center the content (boolean, default: false)
+    - `fullWidthImageBelow`: Show image full width below CTA (boolean, default: false)
     - `callsToAction`: CTA buttons array (max two: primary, secondary)
 -->
 
@@ -44,6 +47,7 @@
 	// Types
 	type Props = {
 		centered?: boolean;
+		fullWidthImageBelow?: boolean;
 		title: string;
 		subtitle: string;
 		imageSrc?: string;
@@ -59,12 +63,57 @@
 		imageSrc,
 		callsToAction = [cta],
 		centered = false,
+		fullWidthImageBelow = false,
 		...rest
 	}: Props = $props();
 </script>
 
 <div class="bg-background section-py" {...rest}>
-	{#if imageSrc && !centered}
+	{#if fullWidthImageBelow}
+		<!-- Full width image below CTA layout -->
+		<div class="section-px container mx-auto" data-enter-container>
+			<!-- Content -->
+			<div class="grid gap-8 text-center">
+				<h1 class="text-display font-[500] tracking-tight" data-enter>
+					<span class="mb-4 block">{title}</span>
+					<span class="text-emphasis-dim text-title2 mt-2 block">{subtitle}</span>
+				</h1>
+
+				{#if callsToAction.length > 0}
+					<div class="flex flex-wrap gap-4 justify-center" data-enter>
+						{#each callsToAction as cta, index}
+							<Button
+								href={cta.href}
+								size="lg"
+								variant={index % 2 === 0 ? "primary" : "secondary"}
+								class="rounded-[var(--radius-md)] px-8 py-3 font-[450] shadow-md transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none max-lg:hidden"
+								>{cta.label}</Button
+							>
+							<Button
+								href={cta.href}
+								size="md"
+								variant={index % 2 === 0 ? "primary" : "secondary"}
+								class="rounded-[var(--radius-md)] px-6 py-2 font-[450] shadow transition hover:shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none lg:hidden"
+								>{cta.label}</Button
+							>
+						{/each}
+					</div>
+				{/if}
+			</div>
+		</div>
+
+		<!-- Full width image -->
+		{#if imageSrc}
+			<div class="w-full mt-12" data-enter>
+				<img
+					src={imageSrc}
+					alt="Hero image"
+					class="w-full h-auto object-cover"
+					onerror={handleImageError}
+				/>
+			</div>
+		{/if}
+	{:else if imageSrc && !centered}
 		<!-- Split layout with image -->
 		<div class="section-px container mx-auto" data-enter-container>
 			<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">

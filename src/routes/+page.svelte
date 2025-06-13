@@ -14,6 +14,7 @@
 	title="You're the best thing thats happen to me" 
 	subtitle="Never gonna give you up" 
 	imageSrc="/generated/image-a-veterinarian-gently-examining-a-joyful.webp"
+	fullWidthImageBelow={true}
 />
 
 <LogoScroller
